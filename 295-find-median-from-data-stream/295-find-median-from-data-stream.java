@@ -1,7 +1,7 @@
 class MedianFinder {
     PriorityQueue<Integer> left,right;
     public MedianFinder() {
-        left = new PriorityQueue<>((a,b) -> b-a);
+        left = new PriorityQueue<>(Collections.reverseOrder());
         right = new PriorityQueue<>();
     }
     
