@@ -48,7 +48,6 @@ public List<Integer> rightSideView(TreeNode root) {
             return new ArrayList();
         
         List<Integer> ans = new ArrayList<Integer>();
-        
         LinkedList<TreeNode> q = new LinkedList<>();
         
         q.addLast(root);
@@ -59,7 +58,6 @@ public List<Integer> rightSideView(TreeNode root) {
                TreeNode r = q.removeFirst();
                 if(s == 0)
                     ans.add(r.val);
-
                 if(r.left!=null)
                  q.addLast(r.left);
                 if(r.right!=null)
