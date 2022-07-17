@@ -10,8 +10,8 @@ class Solution {
                 for(int i=0; i<nums.length; i++){
                     String x = nums[i].substring(nums[i].length()-query[1], nums[i].length()); // trim as required
                     int start = 0;
-                    while(start!=x.length() && x.charAt(start)==0) start++;
-                    x = x.substring(start, x.length());
+                    //while(start!=x.length() && x.charAt(start)==0) start++;
+                    //x = x.substring(start, x.length());
                     arr[i] = new Pair(i,x);
                 }
                Arrays.sort(arr, (a,b) -> a.str.compareTo(b.str));
