@@ -39,7 +39,7 @@ class Solution {
             
                 sum+=comps.get(i);
             
-        }
+        }// not reqd as sum is equal to number of vtces
         for(int i=0;i<comps.size();i++){
             long temp = sum-comps.get(i);
                 ans = ans + comps.get(i)*temp;
