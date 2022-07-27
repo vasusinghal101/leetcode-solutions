@@ -21,23 +21,18 @@ class Solution {
         
     }
     public List<List<Integer>> pacificAtlantic(int[][] heights) {
-        int n = heights.length;
-        int m =heights[0].length;
-        boolean[][] p = new boolean[n][m];
         
+        int n = heights.length;
+        int m = heights[0].length;
+        
+        boolean[][] p = new boolean[n][m];
+        boolean[][] a = new boolean[n][m];
         for(int i=0;i<n;i++){
             dfs(heights, p, i, 0);
-        }
-        for(int i=0;i<m;i++){
-            dfs(heights, p, 0, i);
-        }
-        
-        boolean[][] a = new boolean[n][m];
-        
-        for(int i=0;i<n;i++){
             dfs(heights, a, i, m-1);
         }
         for(int i=0;i<m;i++){
+            dfs(heights, p, 0, i);
             dfs(heights, a, n-1, i);
         }
         
