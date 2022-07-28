@@ -11,10 +11,30 @@ class Solution {
             graph[edge[1]].add(edge[0]);
         }
         boolean[] visited = new boolean[n];
-        return dfs(graph, src, des,visited);
+        
+        //return dfs(graph, src, des,visited);
+         return dfs(graph, src, des,visited);
         
     }
-    
+     public boolean bfs(ArrayList<Integer>[] graph,int src, int dest){
+         boolean[] visited = new boolean[graph.length];
+         Queue<Integer> q = new ArrayDeque<>();
+         q.add(src);
+         
+         while(q.size()>0){
+             int front = q.remove();
+             if(visited[front]) continue;
+             
+             visited[front] = true;
+             
+             for(int nbr : graph[src]){
+                 if(nbr == dest) return true;
+                 q.add(nbr);
+             }
+         }
+         
+         return false;
+     }
     public boolean dfs(ArrayList<Integer>[] graph,int source, int destination, boolean[] visited){
         if(source==destination){
             return true;
