@@ -25,10 +25,11 @@ class Solution {
              int front = q.remove();
              if(visited[front]) continue;
              
-             visited[front] = true;
+             //visited[front] = true;
              
              for(int nbr : graph[src]){
                  if(nbr == dest) return true;
+                 visited[nbr] = true;
                  q.add(nbr);
              }
          }
