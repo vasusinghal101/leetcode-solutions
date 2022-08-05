@@ -32,13 +32,13 @@ class Solution {
         }
         return ans;
     }
-    public int countNodes(TreeNode root) {
+    public int countNodes(TreeNode root) {//logn^2
         if(root == null) return 0;
         int ld = ldCount(root);
         int rd = rdCount(root);
         
         if(ld==rd){
-            return (1<<ld)-1;
+            return (1<<ld)-1;//At one level atmost two calls
         }else{
             return countNodes(root.left)+countNodes(root.right)+1;
         }
