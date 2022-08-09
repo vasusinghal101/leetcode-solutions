@@ -7,7 +7,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution {//Check solution also graph bfs can be used first get mapping of all parent .Now start BFS from target till we reach k level. each node three neighbours.
     
     public boolean path(TreeNode root, TreeNode target, List<TreeNode> r2n){
         if(root==null) return false;
