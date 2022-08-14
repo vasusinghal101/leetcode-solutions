@@ -4,11 +4,18 @@ class Solution {
         int a=cost[0];
         int b=cost[1];
         
+        // for(int i=2;i<n;i++){
+        //     int min = Math.min(cost[i-1],cost[i-2]);
+        //     cost[i]+=min;
+        // }
+        // return Math.min(cost[n-1],cost[n-2]);
+        
         for(int i=2;i<n;i++){
-            int min = Math.min(cost[i-1],cost[i-2]);
-            cost[i]+=min;
+            int min = cost[i] + Math.min(a, b);
+            a=b;
+            b=min;
         }
-        return Math.min(cost[n-1],cost[n-2]);
+        return Math.min(a, b);
         
     }
     
