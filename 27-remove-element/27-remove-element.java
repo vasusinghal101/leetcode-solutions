@@ -11,6 +11,6 @@ class Solution {
                 l++;
             }
         }
-        return l==r+1 ? l : l+1;
+        return l;
     }
 }
