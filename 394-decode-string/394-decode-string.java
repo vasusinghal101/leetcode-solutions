@@ -19,7 +19,6 @@ class Solution {
                 }
                 
                 str = reverse(str);
-                System.out.println(str);
                 int d = Integer.parseInt(reverse(digit));
                 for(int k = 0; k<d;k++){
                     for(char c: str.toCharArray()){
