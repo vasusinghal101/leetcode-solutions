@@ -19,7 +19,7 @@ class Solution {
     }
     
     public int[] isBalancedHelper(TreeNode root) {
-        if(root == null) return new int[]{0,1};
+        if(root == null) return new int[]{0,1};//[0]->height [1]->isBalanced
         
         int[] l = isBalancedHelper(root.left);
         int[] r = isBalancedHelper(root.right);
