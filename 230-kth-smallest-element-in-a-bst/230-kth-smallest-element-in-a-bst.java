@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
- private int ind = 1;
+    private int ind = 1;
     private int ans = 0;
     private void traverse(TreeNode root, int k) {
         if (root == null) return ;
