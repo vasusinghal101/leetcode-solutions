@@ -14,21 +14,37 @@
  * }
  */
 class BSTIterator {
- Stack<TreeNode> st;
-    public BSTIterator(TreeNode root) {
-        st = new Stack<>();
-        addAllLeft(root);
-    }
-    public void addAllLeft(TreeNode root){
-        while(root != null){
-            st.push(root);
-            root = root.left;
+        class Pair{
+        TreeNode node;
+        int state;
+        //state 0-> Not processed yet(preorder), 1->second time(left processed, Inorder),
+        //2-> right processed (post order)
+        Pair(TreeNode root, int state){
+            this.node = root;
+            this.state = state;
         }
     }
+    Stack<Pair> st;
+    public BSTIterator(TreeNode root) {
+        st = new Stack<>();
+        if(root!=null) st.push(new Pair(root, 0));
+        
+    }
     public int next() {
-        TreeNode topValue = st.pop();
-        addAllLeft(topValue.right);
-        return topValue.val;
+         while(st.size()>0){
+            Pair top = st.peek();
+            if(top.state == 0){
+                if(top.node.left!=null) st.push(new Pair(top.node.left,0));
+                top.state++;
+            }else if(top.state == 1){
+                st.pop();
+                if(top.node.right!=null){
+                    st.push(new Pair(top.node.right,0));
+                }
+                return top.node.val;
+            }
+        }
+        return 0;
     }
     
     public boolean hasNext() {
