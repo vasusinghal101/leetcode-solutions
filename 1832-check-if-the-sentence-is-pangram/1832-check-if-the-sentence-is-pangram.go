@@ -1,8 +1,7 @@
 func checkIfPangram(sentence string) bool {
     var fmap [26]bool
     
-    for i, c:= range sentence {
-        i=i
+    for _, c:= range sentence {
         fmap[int(c)-97] = true
     }
     
