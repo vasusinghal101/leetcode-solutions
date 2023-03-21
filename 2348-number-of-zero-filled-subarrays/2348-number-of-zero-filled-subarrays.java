@@ -18,11 +18,11 @@ class Solution {
     
     public long getCount(long n){
         long np1 = n+1;
-        if(n%2==0){
-            n=n/2;
-        }else{
-            np1 = np1/2;
-        }
-        return n*np1;
+        // if(n%2==0){
+        //     n=n/2;
+        // }else{
+        //     np1 = np1/2;
+        // }
+        return (n*np1)/2;
     }
 }
